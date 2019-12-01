@@ -17,7 +17,7 @@ public class ScoreGUI
 		JButton startbasketball = new JButton("Begin Basketball Game");
 		JButton startfootball = new JButton("Begin Football Game");
 		JButton endbasketballgame = new JButton("End Basketball Game");
-		JButton endfootballgame = new JButton("EndS Football Game");
+		JButton endfootballgame = new JButton("End Football Game");
 		
 		JButton twopoints = new JButton("Two Pointer");
 		JButton freethrow = new JButton("Free Throw");
