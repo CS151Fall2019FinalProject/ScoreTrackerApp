@@ -16,52 +16,58 @@ public class Basketball {
 
   private Timestamp startTime;
   private Timestamp endTime;
-  private int Team1TeamScore;
-  private String Team1TeamName;
-  private int Team2TeamScore;
-  private String Team2TeamName;
+  private int Team1Score;
+  private String Team1Name;
+  private int Team2Score;
+  private String Team2Name;
 
 
   public Basketball(String Team1, String Team2){
-    this.Team1TeamName = Team1;
-    this.Team2TeamName = Team2;
-    this.Team1TeamScore = 0;
-    this.Team2TeamScore = 0;
+    this.Team1Name = Team1;
+    this.Team2Name = Team2;
+    this.Team1Score = 0;
+    this.Team2Score = 0;
     this.startTime = new Timestamp(System.currentTimeMillis());
 
   }
 
-  public void Team1AddThree(){
-    this.Team1TeamScore += THREEPOINTER;
+  public String Team1AddThree(){
+    this.Team1Score += THREEPOINTER;
+    return Integer.toString(his.Team1Score);
   }
 
-  public void Team2AddThree(){
-    this.Team2TeamScore += THREEPOINTER;
+  public String Team2AddThree(){
+    this.Team2Score += THREEPOINTER;
+    return Integer.toString(this.Team2Score);
   }
 
-  public void Team1AddFT(){
-    this.Team1TeamScore += FREETHROW;
+  public String Team1AddFT(){
+    this.Team1Score += FREETHROW;
+    return Integer.toString(this.Team1Score);
   }
 
-  public void Team2AddFT() {
-  this.Team2TeamName +=FREETHROW;
+  public String Team2AddFT() {
+  this.Team2Name +=FREETHROW;
+  return Integer.toString(this.Team2Score);
 }
 
-  public void Team1AddTwo(){
-    this.Team1TeamScore += TWOPOINTER;
+  public String Team1AddTwo(){
+    this.Team1Score += TWOPOINTER;
+    return Integer.toString(this.Team1Score);
   }
 
-  public void Team2AddTwo() {
-    this.Team2TeamScore += TWOPOINTER;
+  public String Team2AddTwo() {
+    this.Team2Score += TWOPOINTER;
+    return this.Team2Score;
   }
 
   public String endGame(){
     this.endGame = new Timestamp(System.currentTimeMillis());
-    if(this.Team1TeamScore > this.Team2TeamScore){
-      return this.Team1TeamName;
+    if(this.Team1Score > this.Team2Score){
+      return this.Team1Name;
     }
-    else if(this.Team1TeamScore < this.Team2TeamScore){
-      return this.Team2TeamName;
+    else if(this.Team1Score < this.Team2Score){
+      return this.Team2Name;
     }
     else {
       return "GAME ENDED IN A TIE, GOING TO OVERTIME";
