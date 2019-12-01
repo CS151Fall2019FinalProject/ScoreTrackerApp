@@ -40,6 +40,7 @@ public class ScoreGUI
 				if (e.getSource() == startbasketball)
 				{
 					frame.remove(startfootball);
+					frame.add(endbasketballgame);
 					frame.add(twopoints);
 					frame.add(freethrow);
 					frame.add(threepoints);
@@ -52,6 +53,7 @@ public class ScoreGUI
 				else if( e.getSource() == startfootball)
 				{
 					frame.remove(startbasketball);
+					frame.add(endfootballgame);
 					frame.add(touchdown);
 					frame.add(extrakick);
 					frame.add(fieldgoal);
