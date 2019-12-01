@@ -47,7 +47,7 @@ public class Football {
   }
 
   public String Team2AddFG() {
-  this.Team2Name +=FIELDGOAL;
+  this.Team2Score +=FIELDGOAL;
   return Integer.toString(this.Team2Score);
 }
 
