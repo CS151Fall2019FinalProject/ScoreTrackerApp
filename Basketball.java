@@ -33,7 +33,7 @@ public class Basketball {
 
   public String Team1AddThree(){
     this.Team1Score += THREEPOINTER;
-    return Integer.toString(his.Team1Score);
+    return Integer.toString(this.Team1Score);
   }
 
   public String Team2AddThree(){
@@ -47,7 +47,7 @@ public class Basketball {
   }
 
   public String Team2AddFT() {
-  this.Team2Name +=FREETHROW;
+  this.Team2Score +=FREETHROW;
   return Integer.toString(this.Team2Score);
 }
 
@@ -58,11 +58,11 @@ public class Basketball {
 
   public String Team2AddTwo() {
     this.Team2Score += TWOPOINTER;
-    return this.Team2Score;
+    return Integer.toString(this.Team2Score);
   }
 
   public String endGame(){
-    this.endGame = new Timestamp(System.currentTimeMillis());
+    this.endTime = new Timestamp(System.currentTimeMillis());
     if(this.Team1Score > this.Team2Score){
       return this.Team1Name;
     }
@@ -75,3 +75,4 @@ public class Basketball {
 
   }
 }
+
