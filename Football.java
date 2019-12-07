@@ -33,40 +33,42 @@ public class Football {
 
   public String Team1AddTouchdown(){
     this.Team1Score += TOUCHDOWN;
-    return Integer.toString(this.Team1Score);
+    return "Team 1: " + this.Team1Score;
   }
 
   public String Team2AddTouchdown(){
     this.Team2Score += TOUCHDOWN;
-    return Integer.toString(this.Team2Score);
+    return "Team 2: " + this.Team2Score;
   }
 
   public String Team1AddFG(){
     this.Team1Score += FIELDGOAL;
-    return Integer.toString(this.Team1Score);
+    return "Team 1: " + this.Team1Score;
   }
 
   public String Team2AddFG() {
   this.Team2Score +=FIELDGOAL;
-  return Integer.toString(this.Team2Score);
+  return "Team 2: " + this.Team2Score;
 }
 
   public String Team1AddSafety(){
     this.Team1Score += SAFETY;
-    return Integer.toString(this.Team1Score);
+    return "Team 1: " + this.Team1Score;
   }
 
   public String Team2AddSafety() {
     this.Team2Score += SAFETY;
-    return Integer.toString(this.Team2Score);
+    return"Team 2: " + this.Team2Score;
   }
 
   public String endGame(){
-    if(this.Team1Score > this.Team2Score){
-      return this.Team1Name;
+    if(this.Team1Score > this.Team2Score)
+    {
+    	 return this.Team1Name + " Is the Winner!";
     }
-    else if(this.Team1Score < this.Team2Score){
-      return this.Team2Name;
+    else if(this.Team1Score < this.Team2Score)
+    {
+    	return this.Team2Name + " Is the Winner!";
     }
     else {
       return "GAME ENDED IN A TIE, GOING TO OVERTIME";
