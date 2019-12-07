@@ -1,10 +1,15 @@
 package ScoreKeeper;
 
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.MalformedURLException;
+import java.net.URL;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JFrame;
@@ -12,14 +17,17 @@ import javax.swing.JLabel;
 
 public class ScoreGUI 
 {
-	public static void main(String[] args) 
+	public static void main(String[] args) throws MalformedURLException 
 	{
 		JFrame frame = new JFrame();
+		
+		frame.setSize(800, 900);
 
-		JButton startbasketball = new JButton("Begin Basketball Game");
-		JButton startfootball = new JButton("Begin Football Game");
-		JButton endbasketballgame = new JButton("End Basketball Game");
-		JButton endfootballgame = new JButton("End Football Game");
+		JButton startbasketball = new JButton((Icon) new ImageIcon(new URL("http://iconbug.com/download/size/256/icon/2717/basketball/")));
+		JButton startfootball =new JButton((Icon) new ImageIcon(new URL("https://icon-library.net/images/small-football-icon/small-football-icon-5.jpg")));
+		
+		JButton endbasketballgame = new JButton((Icon) new ImageIcon(new URL("http://www.testking.com/techking/wp-content/uploads/2010/12/gameover.png")));
+		JButton endfootballgame = new JButton((Icon) new ImageIcon(new URL("http://www.testking.com/techking/wp-content/uploads/2010/12/gameover.png")));
 		
 		JButton Team1two = new JButton("Team 1 Two Pointer");
 		JButton Team1freethrow = new JButton("Team 1 Free Throw");
@@ -36,6 +44,17 @@ public class ScoreGUI
 		JButton Team2touchdown = new JButton("Team 2 Touchdown");
 		JButton Team2extrakick = new JButton("Team 2 Safety");
 		JButton Team2fieldgoal = new JButton("Team 2 Field Goal");
+		
+		JLabel team1score = new JLabel("Team 1: ");
+		JLabel team2score = new JLabel("Team 2: ");
+		
+		Font f = new Font("OCR A Extended", Font.PLAIN, 40);
+		
+		team1score.setFont(f);
+		team2score.setFont(f);
+		
+		
+		
 		
 		frame.setLayout(new GridLayout(4,1));
 
@@ -60,8 +79,8 @@ public class ScoreGUI
 					frame.add(Team2freethrow);
 					frame.add(Team2three);
 					
-					JLabel team1score = new JLabel();
-					JLabel team2score = new JLabel();
+					//JLabel team1score = new JLabel("Team 1: ");
+					//JLabel team2score = new JLabel("Team 2: ");
 					JLabel finalscore = new JLabel();
 					
 					Basketball ye = new Basketball("Team1", "Team2");
@@ -113,10 +132,13 @@ public class ScoreGUI
 					Team2freethrow.addActionListener(basketballaction);
 					Team2three.addActionListener(basketballaction);
 					
+					finalscore.setFont(f);
 					frame.add(team1score);
 					frame.add(team2score);
 					frame.add(finalscore);
-					frame.pack();
+					
+					frame.setSize(1600, 800);
+					//frame.pack();
 					frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 					frame.setVisible(true);
 					
@@ -142,8 +164,8 @@ public class ScoreGUI
 					frame.add(Team2extrakick);
 					frame.add(Team2fieldgoal);
 					
-					JLabel team1score = new JLabel();
-					JLabel team2score = new JLabel();
+					//JLabel team1score = new JLabel();
+					//JLabel team2score = new JLabel();
 					JLabel finalscore = new JLabel();
 					
 					Football ye = new Football("Team1", "Team2");
@@ -194,11 +216,11 @@ public class ScoreGUI
 					Team2touchdown.addActionListener(footballaction);
 					Team2extrakick.addActionListener(footballaction);
 					Team2fieldgoal.addActionListener(footballaction);
-					
+					finalscore.setFont(f);
 					frame.add(team1score);
 					frame.add(team2score);
 					frame.add(finalscore);
-					frame.pack();
+					frame.setSize(1600,800);
 					frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 					frame.setVisible(true);
 					
@@ -210,11 +232,9 @@ public class ScoreGUI
 		startbasketball.addActionListener(action);
 		startfootball.addActionListener(action2);
 		
-		frame.pack();
+		//frame.pack();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 		
 	}
 }
-			
-
