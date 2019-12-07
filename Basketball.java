@@ -1,11 +1,8 @@
 package ScoreKeeper;
 
-import java.util.*;
-import java.lang.*;
-import java.awt.*;
+
 import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+
 
 
 public class Basketball {
@@ -65,7 +62,8 @@ public class Basketball {
     return "Team 2: " + this.Team2Score;
   }
 
-  public String endGame(){
+  public String endGame()
+  {
     this.endTime = new Timestamp(System.currentTimeMillis());
     if(this.Team1Score > this.Team2Score)
     {
@@ -75,7 +73,8 @@ public class Basketball {
     {
       return this.Team2Name + " Is the Winner!";
     }
-    else {
+    else 
+    {
       return "GAME ENDED IN A TIE, GOING TO OVERTIME";
     }
 
