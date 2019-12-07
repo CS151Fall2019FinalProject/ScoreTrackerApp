@@ -11,9 +11,9 @@ import java.net.URL;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 public class ScoreGUI 
 {
@@ -21,13 +21,13 @@ public class ScoreGUI
 	{
 		JFrame frame = new JFrame();
 		
-		frame.setSize(800, 900);
+		frame.setSize(500, 700);
 
 		JButton startbasketball = new JButton((Icon) new ImageIcon(new URL("http://iconbug.com/download/size/256/icon/2717/basketball/")));
 		JButton startfootball =new JButton((Icon) new ImageIcon(new URL("https://icon-library.net/images/small-football-icon/small-football-icon-5.jpg")));
 		
-		JButton endbasketballgame = new JButton((Icon) new ImageIcon(new URL("http://www.testking.com/techking/wp-content/uploads/2010/12/gameover.png")));
-		JButton endfootballgame = new JButton((Icon) new ImageIcon(new URL("http://www.testking.com/techking/wp-content/uploads/2010/12/gameover.png")));
+		JButton endbasketballgame = new JButton((Icon) new ImageIcon(new URL("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR_0DJtq4nmm-1qnaReGU8UMDmwKoNAnZiBc4svXV4HMrDu5Yag")));
+		JButton endfootballgame = new JButton((Icon) new ImageIcon(new URL("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR_0DJtq4nmm-1qnaReGU8UMDmwKoNAnZiBc4svXV4HMrDu5Yag")));
 		
 		JButton Team1two = new JButton("Team 1 Two Pointer");
 		JButton Team1freethrow = new JButton("Team 1 Free Throw");
@@ -48,7 +48,7 @@ public class ScoreGUI
 		JLabel team1score = new JLabel("Team 1: ");
 		JLabel team2score = new JLabel("Team 2: ");
 		
-		Font f = new Font("OCR A Extended", Font.PLAIN, 40);
+		Font f = new Font("OCR A Extended", Font.PLAIN, 30);
 		
 		team1score.setFont(f);
 		team2score.setFont(f);
@@ -92,6 +92,8 @@ public class ScoreGUI
 							if (e.getSource() == endbasketballgame)
 							{	
 								finalscore.setText(ye.endGame());
+								frame.setVisible(false);
+								JOptionPane.showMessageDialog(null, finalscore);
 								
 							}
 							else if(e.getSource() == Team1two)
@@ -119,6 +121,8 @@ public class ScoreGUI
 								team2score.setText(ye.Team2AddThree());
 							}
 						}
+						
+						
 					};
 					
 					
@@ -137,7 +141,7 @@ public class ScoreGUI
 					frame.add(team2score);
 					frame.add(finalscore);
 					
-					frame.setSize(1600, 800);
+					frame.setSize(900, 600);
 					//frame.pack();
 					frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 					frame.setVisible(true);
@@ -177,6 +181,8 @@ public class ScoreGUI
 							if (e.getSource() == endfootballgame)
 							{	
 								finalscore.setText(ye.endGame());
+								frame.setVisible(false);
+								JOptionPane.showMessageDialog(null, finalscore);
 								
 							}
 							else if(e.getSource() == Team1touchdown)
@@ -220,7 +226,7 @@ public class ScoreGUI
 					frame.add(team1score);
 					frame.add(team2score);
 					frame.add(finalscore);
-					frame.setSize(1600,800);
+					frame.setSize(900, 600);
 					frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 					frame.setVisible(true);
 					
