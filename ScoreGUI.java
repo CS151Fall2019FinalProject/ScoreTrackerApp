@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
 
 public class ScoreGUI 
 {
-	public static void main(String[] args) throws MalformedURLException 
+	public static void run() throws MalformedURLException
 	{
 		JFrame frame = new JFrame();
 		
@@ -242,5 +242,10 @@ public class ScoreGUI
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 		
+	}
+	
+	public static void main(String[] args) throws MalformedURLException
+	{
+		run();
 	}
 }
