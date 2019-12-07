@@ -1,12 +1,5 @@
 package ScoreKeeper;
 
-import java.util.*;
-import java.lang.*;
-import java.awt.*;
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 
 public class Football {
 
