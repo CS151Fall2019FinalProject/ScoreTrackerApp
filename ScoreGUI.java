@@ -14,6 +14,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import java.util.*;
 
 public class ScoreGUI 
 {
@@ -94,6 +96,7 @@ public class ScoreGUI
 								finalscore.setText(ye.endGame());
 								frame.setVisible(false);
 								JOptionPane.showMessageDialog(null, finalscore);
+	
 								
 							}
 							else if(e.getSource() == Team1two)
@@ -172,7 +175,7 @@ public class ScoreGUI
 					//JLabel team2score = new JLabel();
 					JLabel finalscore = new JLabel();
 					
-					Football ye = new Football("Team1", "Team2");
+					Football newF = new Football("Team1", "Team2");
 					
 					ActionListener footballaction = new ActionListener() 
 					{
@@ -180,34 +183,57 @@ public class ScoreGUI
 						{
 							if (e.getSource() == endfootballgame)
 							{	
-								finalscore.setText(ye.endGame());
-								frame.setVisible(false);
-								JOptionPane.showMessageDialog(null, finalscore);
+								//Get the final stats tables for both teams
+								Map<String, Integer> team1Stats = newF.team1Stats();
+								Map<String, Integer> team2Stats = newF.team2Stats();
 								
+								//Set the text for final label
+								finalscore.setText(newF.endGame());
+								frame.setVisible(false);
+								
+								JOptionPane.showMessageDialog(null, finalscore);
+								//Show statistics for team1
+								JTable table=new JTable(team1Stats.size(),2);
+								 int row=0;
+								 for(Map.Entry<String,Integer> entry: team1Stats.entrySet()){
+								      table.setValueAt(entry.getKey(),row,0);
+								      table.setValueAt(entry.getValue(),row,1);
+								      row++;
+								 }
+								 //Show statistics for team 2
+								 JTable table2=new JTable(team2Stats.size(),2);
+								 int row1=0;
+								 for(Map.Entry<String,Integer> entry: team2Stats.entrySet()){
+								      table.setValueAt(entry.getKey(),row1,0);
+								      table.setValueAt(entry.getValue(),row1,1);
+								      row1++;
+								 }
+								 JOptionPane.showMessageDialog(null, table, "Team 1 Statistics", JOptionPane.INFORMATION_MESSAGE);
+								 JOptionPane.showMessageDialog(null, table2, "Team 2 Statistics", JOptionPane.INFORMATION_MESSAGE);
 							}
 							else if(e.getSource() == Team1touchdown)
 							{
-								team1score.setText(ye.Team1AddTouchdown());
+								team1score.setText(newF.Team1AddTouchdown());
 							}
 							else if (e.getSource() == Team1extrakick)
 							{
-								team1score.setText(ye.Team1AddSafety());
+								team1score.setText(newF.Team1AddSafety());
 							}
 							else if(e.getSource() == Team1fieldgoal)
 							{
-								team1score.setText(ye.Team1AddFG());
+								team1score.setText(newF.Team1AddFG());
 							}
 							else if (e.getSource() == Team2touchdown)
 							{
-								team2score.setText(ye.Team2AddTouchdown());
+								team2score.setText(newF.Team2AddTouchdown());
 							}
 							else if(e.getSource() == Team2extrakick)
 							{
-								team2score.setText(ye.Team2AddSafety());
+								team2score.setText(newF.Team2AddSafety());
 							}
 							else if (e.getSource() == Team2fieldgoal)
 							{
-								team2score.setText(ye.Team2AddFG());
+								team2score.setText(newF.Team2AddFG());
 							}
 						}
 					};
