@@ -1,4 +1,3 @@
-package ScoreKeeper;
 
 import javax.swing.*;
 import java.util.*;
