@@ -1,4 +1,3 @@
-package ScoreKeeper;
 
 import java.awt.FlowLayout;
 import java.awt.Font;
