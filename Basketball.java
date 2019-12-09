@@ -1,5 +1,3 @@
-package ScoreKeeper;
-
 
 import java.sql.Timestamp;
 
